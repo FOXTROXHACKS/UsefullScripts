@@ -1,0 +1,12 @@
+function fireButton1(button)
+   for i,signal in next, getconnections(button.MouseButton1Click) do
+       signal:Fire()
+   end
+   for i,signal in next, getconnections(button.MouseButton1Down) do
+       signal:Fire()
+   end
+   for i,signal in next, getconnections(button.Activated) do
+       signal:Fire()
+   end
+end
+return fireButton1
