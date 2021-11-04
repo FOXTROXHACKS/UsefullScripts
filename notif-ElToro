@@ -127,7 +127,7 @@ return function(title, text, secs)
 		close.Visible = true
 
 		-------------------
-		wait(1)
+		wait()
 		notif.Visible = true
 		wait(0.1)
 		notif:TweenSize(UDim2.new(0,305,0, 112),"InOut","Sine",1,true)
