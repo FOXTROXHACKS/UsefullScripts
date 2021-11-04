@@ -1,0 +1,176 @@
+--local notify = loadstring(game:HttpGet("https://raw.githubusercontent.com/FOXTROXHACKS/UsefullScripts/main/TypeWriter-AlexR32"))()
+--Send notification: notify(Text, Text, secs)
+
+local RunService = game:GetService("RunService")
+local CoreGui = game:GetService("CoreGui")
+
+return function(title, text, secs)
+
+	local notif = Instance.new("ScreenGui")
+	local NotifFrame = Instance.new("Frame")
+	local Logo = Instance.new("ImageLabel")
+	local Pattern = Instance.new("ImageLabel")
+	local NotifMain = Instance.new("TextLabel")
+	local notiftxt = Instance.new("TextLabel")
+	local CloseAnim = Instance.new("ImageLabel")
+	local Logo_2 = Instance.new("ImageLabel")
+
+
+	notif.Name = "notif"
+	notif.Parent = CoreGui
+	notif.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	NotifFrame.Name = "NotifFrame"
+	NotifFrame.Parent = notif
+	NotifFrame.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+	NotifFrame.BorderSizePixel = 0
+	NotifFrame.ClipsDescendants = true
+	NotifFrame.Position = UDim2.new(0.412977785, 0, 0.379551917, 0)
+	NotifFrame.Size = UDim2.new(0, 305, 0, 112)
+	NotifFrame.Visible = false
+	NotifFrame.ZIndex = 20
+
+	Logo.Name = "Logo"
+	Logo.Parent = NotifFrame
+	Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Logo.BackgroundTransparency = 1.000
+	Logo.BorderSizePixel = 0
+	Logo.Position = UDim2.new(-0.00344010885, 0, -0.0149654383, 0)
+	Logo.Size = UDim2.new(0, 50, 0, 50)
+	Logo.ZIndex = 22
+	Logo.Image = "rbxassetid://7893130056"
+
+	Pattern.Name = "Pattern"
+	Pattern.Parent = NotifFrame
+	Pattern.BackgroundColor3 = Color3.fromRGB(138, 0, 0)
+	Pattern.BorderSizePixel = 0
+	Pattern.Position = UDim2.new(0, 0, -0.0114916395, 0)
+	Pattern.Size = UDim2.new(0, 305, 0, 48)
+	Pattern.ZIndex = 21
+	Pattern.Image = "rbxassetid://121480522"
+	Pattern.ImageTransparency = 0.700
+	Pattern.ScaleType = Enum.ScaleType.Tile
+	Pattern.SliceCenter = Rect.new(0, 256, 0, 256)
+	Pattern.TileSize = UDim2.new(0, 45, 0, 45)
+
+	NotifMain.Name = "NotifMain"
+	NotifMain.Parent = Pattern
+	NotifMain.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	NotifMain.BackgroundTransparency = 1.000
+	NotifMain.Position = UDim2.new(0.172638446, 0, -0.0208333321, 0)
+	NotifMain.Size = UDim2.new(0, 200, 0, 47)
+	NotifMain.ZIndex = 21
+	NotifMain.Font = Enum.Font.SourceSans
+	NotifMain.Text = title
+	NotifMain.TextColor3 = Color3.fromRGB(255, 255, 255)
+	NotifMain.TextSize = 40.000
+	NotifMain.TextStrokeTransparency = 0.730
+	NotifMain.TextWrapped = true
+
+	notiftxt.Name = "notiftxt"
+	notiftxt.Parent = NotifFrame
+	notiftxt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	notiftxt.BackgroundTransparency = 1.000
+	notiftxt.Position = UDim2.new(0.036065571, 0, 0.490199476, 0)
+	notiftxt.Size = UDim2.new(0, 282, 0, 53)
+	notiftxt.ZIndex = 21
+	notiftxt.Font = Enum.Font.SourceSans
+	notiftxt.Text = text
+	notiftxt.TextColor3 = Color3.fromRGB(255, 255, 255)
+	notiftxt.TextSize = 20.000
+
+	CloseAnim.Name = "CloseAnim"
+	CloseAnim.Parent = NotifFrame
+	CloseAnim.BackgroundColor3 = Color3.fromRGB(138, 0, 0)
+	CloseAnim.BorderSizePixel = 0
+	CloseAnim.Position = UDim2.new(-0.000114768744, 0, -0.00392857194, 0)
+	CloseAnim.Size = UDim2.new(0, 305, 0, 112)
+	CloseAnim.Visible = false
+	CloseAnim.ZIndex = 30
+	CloseAnim.Image = "rbxassetid://121480522"
+	CloseAnim.ImageTransparency = 0.700
+	CloseAnim.ScaleType = Enum.ScaleType.Tile
+	CloseAnim.SliceCenter = Rect.new(0, 256, 0, 256)
+	CloseAnim.TileSize = UDim2.new(0, 45, 0, 45)
+
+	Logo_2.Name = "Logo"
+	Logo_2.Parent = CloseAnim
+	Logo_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Logo_2.BackgroundTransparency = 1.000
+	Logo_2.Position = UDim2.new(0.32234928, 0, 0.0091754375, 0)
+	Logo_2.Size = UDim2.new(0, 108, 0, 108)
+	Logo_2.ZIndex = 31
+	Logo_2.Image = "rbxassetid://7893130056"
+
+	-- Scripts:
+
+	local function AGZKQ_fake_script() -- notif.LocalScript 
+		local script = Instance.new('LocalScript', notif)
+
+		notif = script.Parent.NotifFrame
+		notif.Visible = true
+		notif.Draggable = false
+		notif.Position = UDim2.new(0.5, 0,0.5, 0)
+		notif.AnchorPoint = Vector2.new(0.5,0.5)
+		notif.Size = UDim2.new(0,0,0,0)
+		--{0.561, 0},{0.426, 0}
+
+		local usi = game:GetService("UserInputService")
+
+
+		local close = script.Parent.NotifFrame.CloseAnim
+
+		close.Logo.ImageTransparency = 0
+
+		close.Position = UDim2.new(0.5, 0,0.5, 0)
+		close.AnchorPoint = Vector2.new(0.5,0.5)
+		close.Visible = true
+
+		-------------------
+		wait(1)
+		notif.Visible = true
+		wait(0.1)
+		notif:TweenSize(UDim2.new(0,305,0, 112),"InOut","Sine",1,true)
+		wait(1.5)
+
+		close.Active = false
+
+		for i = 0,1,0.05 do
+			close.BackgroundTransparency = i
+			close.ImageTransparency = i
+			wait(0.01)
+		end
+		close.BackgroundTransparency = 1
+		close.ImageTransparency = 1
+
+		for i = 0,1,0.1 do
+			close.Logo.ImageTransparency = i
+			wait(0.01)
+		end
+
+		close.Visible = false
+		wait(secs)--wait before it closes
+		close.Visible = true
+		--
+		close.Active = false
+
+		for i = 1,0,-0.05 do
+			close.BackgroundTransparency = i
+			close.ImageTransparency = i
+			wait(0.01)
+		end
+		for i = 1,0,-0.1 do
+			close.Logo.ImageTransparency = i
+			wait(0.01)
+		end
+		close.BackgroundTransparency = 0
+		close.ImageTransparency = 0
+		wait(0.5)
+		notif:TweenSize(UDim2.new(0,0,0,0),"InOut","Sine",1,true)
+		wait(1.3)
+		notif.Visible = false
+		game.CoreGui.notif:Destroy()
+
+	end
+	coroutine.wrap(AGZKQ_fake_script)()
+end
