@@ -1,0 +1,28 @@
+--Made by Al3xander#0007
+--Def: FireBtn1 = left click, FireBtn2 = right click
+--Usage: FireBtn1(PATH TO BUTTON) -- FireBtn2(PATH TO BUTTON)
+
+function FireBtn1(btn)
+   for x,sgnl in next, getconnections(btn.MouseButton1Click) do
+       sgnl:Fire()
+   end
+   for x,sgnl in next, getconnections(btn.MouseButton1Down) do
+       sgnl:Fire()
+   end
+   for x,sgnl in next, getconnections(btn.Activated) do
+       sgnl:Fire()
+   end
+end
+
+
+function FireBtn2(btn)
+   for x,sgnl in next, getconnections(btn.MouseButton2Click) do
+       sgnl:Fire()
+   end
+   for x,sgnl in next, getconnections(btn.MouseButton2Down) do
+       sgnl:Fire()
+   end
+   for x,sgnl in next, getconnections(btn.Activated) do
+       sgnl:Fire()
+   end
+end
