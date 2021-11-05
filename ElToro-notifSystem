@@ -1,4 +1,4 @@
---loadstring(game:HttpGet("https://raw.githubusercontent.com/FOXTROXHACKS/UsefullScripts/main/ElToro-notifSys"))()
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/FOXTROXHACKS/UsefullScripts/main/ElToro-notifSystem"))()
 --Send notification: notify(title, text, secs)
 --Send message: Message(title, text, secs)
 local notif = Instance.new("ScreenGui")
@@ -25,7 +25,7 @@ UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Bottom
 UIListLayout.Padding = UDim.new(0.0199999996, 0)
 
 
-local function notify(title, txt, secs)
+function notify(title, txt, secs)
 
 
 	local NotifFrame = Instance.new("Frame")
@@ -185,7 +185,7 @@ local function notify(title, txt, secs)
 	coroutine.wrap(AKGT_fake_script)()
 end
 
-local function Message(title, txt, secs)
+function Message(title, txt, secs)
 
 	local GameFinder = Instance.new("ScreenGui")
 	local GameFound = Instance.new("Frame")
@@ -351,6 +351,8 @@ local function Message(title, txt, secs)
 		GameLoad:TweenSize(UDim2.new(0,0,0,0),"InOut","Sine",0.5,true)
 		wait(0.7)
 		GameLoad.Visible = false
+		wait(0.1)
+		script.Parent:Destroy()
 	end
 	coroutine.wrap(MOLICW_fake_script)()
 end
