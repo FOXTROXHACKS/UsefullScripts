@@ -354,4 +354,5 @@ local function Message(title, txt, secs)
 	end
 	coroutine.wrap(MOLICW_fake_script)()
 end
-return
+return notify()
+return Message()
