@@ -1,4 +1,4 @@
---loadstring(game:HttpGet("https://raw.githubusercontent.com/FOXTROXHACKS/UsefullScripts/main/ElToro-notifSystem"))()
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/FOXTROXHACKS/UsefullScripts/main/ElToro-notifSys"))()
 --Send notification: notify(title, text, secs)
 --Send message: Message(title, text, secs)
 local notif = Instance.new("ScreenGui")
@@ -138,7 +138,6 @@ function notify(title, txt, secs)
 
 		closenotif.Visible = true
 		--{0, },{0, 89}
-		wait(3)
 		notification.Visible = true
 		wait(0.1)
 		notification:TweenSize(UDim2.new(0,231,0, 89),"InOut","Sine",0.5,true)
@@ -309,7 +308,6 @@ function Message(title, txt, secs)
 		closegame.Visible = true
 
 		-------------------
-		wait(3)
 		GameLoad.Visible = true
 		wait(0.1)
 		GameLoad:TweenSize(UDim2.new(0,305,0, 112),"InOut","Sine",0.5,true)
