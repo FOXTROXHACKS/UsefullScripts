@@ -1,0 +1,356 @@
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/FOXTROXHACKS/UsefullScripts/main/TypeWriter-AlexR32"))()
+--Send notification: notify(title, text, secs)
+--Send message: Message(title, text, secs)
+local notif = Instance.new("ScreenGui")
+local NotifBar = Instance.new("Frame")
+local UIListLayout = Instance.new("UIListLayout")
+
+notif.Name = "notif"
+notif.Parent = game.CoreGui
+notif.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+NotifBar.Name = "NotifBar"
+NotifBar.Parent = notif
+NotifBar.Active = true
+NotifBar.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+NotifBar.BackgroundTransparency = 1
+NotifBar.Position = UDim2.new(0.827686667, 0, 0.558124185, 0)
+NotifBar.Size = UDim2.new(0, 234, 0, 280)
+NotifBar.ZIndex = 999
+
+UIListLayout.Parent = NotifBar
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Bottom
+UIListLayout.Padding = UDim.new(0.0199999996, 0)
+
+
+local function notify(title, txt, secs)
+
+
+	local NotifFrame = Instance.new("Frame")
+	local Logo = Instance.new("ImageLabel")
+	local Pattern = Instance.new("ImageLabel")
+	local Title = Instance.new("TextLabel")
+	local Text = Instance.new("TextLabel")
+	local CloseAnim = Instance.new("ImageLabel")
+	local Logo_2 = Instance.new("ImageLabel")
+
+	--Properties:
+
+
+
+	NotifFrame.Name = "NotifFrame"
+	NotifFrame.Parent = NotifBar
+	NotifFrame.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+	NotifFrame.BorderSizePixel = 0
+	NotifFrame.ClipsDescendants = true
+	NotifFrame.Position = UDim2.new(0.053418804, 0, 0.682142854, 0)
+	NotifFrame.Size = UDim2.new(0, 232, 0, 89)
+	NotifFrame.ZIndex = 1000
+
+	Logo.Name = "Logo"
+	Logo.Parent = NotifFrame
+	Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Logo.BackgroundTransparency = 1.000
+	Logo.BorderSizePixel = 0
+	Logo.Position = UDim2.new(-0.00344016333, 0, 0.00725804036, 0)
+	Logo.Size = UDim2.new(0, 44, 0, 35)
+	Logo.ZIndex = 22
+	Logo.Image = "rbxassetid://7893130056"
+
+	Pattern.Name = "Pattern"
+	Pattern.Parent = NotifFrame
+	Pattern.BackgroundColor3 = Color3.fromRGB(138, 0, 0)
+	Pattern.BorderSizePixel = 0
+	Pattern.Position = UDim2.new(0, 0, 0.0106945802, 0)
+	Pattern.Size = UDim2.new(0, 233, 0, 37)
+	Pattern.ZIndex = 21
+	Pattern.Image = "rbxassetid://121480522"
+	Pattern.ImageTransparency = 0.700
+	Pattern.ScaleType = Enum.ScaleType.Tile
+	Pattern.SliceCenter = Rect.new(0, 256, 0, 256)
+	Pattern.TileSize = UDim2.new(0, 45, 0, 45)
+
+	Title.Name = "Title"
+	Title.Parent = Pattern
+	Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Title.BackgroundTransparency = 1.000
+	Title.Position = UDim2.new(0.106769085, 0, -0.0481517911, 0)
+	Title.Size = UDim2.new(0, 181, 0, 36)
+	Title.ZIndex = 21
+	Title.Font = Enum.Font.SourceSans
+	Title.Text = title
+	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Title.TextSize = 30.000
+	Title.TextStrokeTransparency = 0.730
+
+	Text.Name = "Text"
+	Text.Parent = NotifFrame
+	Text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Text.BackgroundTransparency = 1.000
+	Text.Position = UDim2.new(-0.000564641261, 0, 0.426424861, 0)
+	Text.Size = UDim2.new(0, 231, 0, 50)
+	Text.ZIndex = 21
+	Text.Font = Enum.Font.SourceSans
+	Text.Text = txt
+	Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Text.TextSize = 15.000
+
+	CloseAnim.Name = "CloseAnim"
+	CloseAnim.Parent = NotifFrame
+	CloseAnim.BackgroundColor3 = Color3.fromRGB(138, 0, 0)
+	CloseAnim.BorderSizePixel = 0
+	CloseAnim.Position = UDim2.new(-0.00344006764, 0, 0, 0)
+	CloseAnim.Size = UDim2.new(0, 233, 0, 89)
+	CloseAnim.Visible = false
+	CloseAnim.ZIndex = 30
+	CloseAnim.Image = "rbxassetid://121480522"
+	CloseAnim.ImageTransparency = 0.700
+	CloseAnim.ScaleType = Enum.ScaleType.Tile
+	CloseAnim.SliceCenter = Rect.new(0, 256, 0, 256)
+	CloseAnim.TileSize = UDim2.new(0, 45, 0, 45)
+
+	Logo_2.Name = "Logo"
+	Logo_2.Parent = CloseAnim
+	Logo_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Logo_2.BackgroundTransparency = 1.000
+	Logo_2.Position = UDim2.new(0.326697052, 0, 0.0551522784, 0)
+	Logo_2.Size = UDim2.new(0, 78, 0, 78)
+	Logo_2.ZIndex = 31
+	Logo_2.Image = "rbxassetid://7893130056"
+
+	-- Scripts:
+
+	local function AKGT_fake_script() -- NotifFrame.Notifv2 
+		local script = Instance.new('LocalScript', NotifFrame)
+
+		notification = script.Parent
+		notification.AnchorPoint = Vector2.new(0.5,0.5)
+		notification.Visible = false
+		notification.Draggable = false
+		notification.Size = UDim2.new(0,0,0,89)
+		notification.AnchorPoint = Vector2.new(0.5,0.5)
+
+		closenotif = notification.CloseAnim
+
+		closenotif.Logo.ImageTransparency = 0
+
+		closenotif.Visible = true
+		--{0, },{0, 89}
+		wait(3)
+		notification.Visible = true
+		wait(0.1)
+		notification:TweenSize(UDim2.new(0,231,0, 89),"InOut","Sine",0.5,true)
+		wait(0.7)
+
+		closenotif.Active = false
+
+		for i = 0,1,0.05 do
+			closenotif.BackgroundTransparency = i
+			closenotif.ImageTransparency = i
+			wait(0.01)
+		end
+		closenotif.BackgroundTransparency = 1
+		closenotif.ImageTransparency = 1
+
+		for i = 0,1,0.1 do
+			closenotif.Logo.ImageTransparency = i
+			wait(0.01)
+		end
+
+		closenotif.Visible = false
+		wait(secs)--wait before it closes
+
+		closenotif.Visible = true
+		closenotif.Active = false
+
+		for i = 1,0,-0.05 do
+			closenotif.BackgroundTransparency = i
+			closenotif.ImageTransparency = i
+			wait(0.01)
+		end
+		for i = 1,0,-0.1 do
+			closenotif.Logo.ImageTransparency = i
+			wait(0.01)
+		end
+		closenotif.BackgroundTransparency = 0
+		closenotif.ImageTransparency = 0
+		wait(0.5)
+		notification:TweenSize(UDim2.new(0,0,0,0),"InOut","Sine",0.5,true)
+		wait(0.7)
+		notification.Visible = false
+		script.Parent:Destroy()
+	end
+	coroutine.wrap(AKGT_fake_script)()
+end
+
+local function Message(title, txt, secs)
+
+	local GameFinder = Instance.new("ScreenGui")
+	local GameFound = Instance.new("Frame")
+	local Logo = Instance.new("ImageLabel")
+	local Pattern = Instance.new("ImageLabel")
+	local Title = Instance.new("TextLabel")
+	local text = Instance.new("TextLabel")
+	local CloseAnim = Instance.new("ImageLabel")
+	local Logo_2 = Instance.new("ImageLabel")
+
+	--Properties:
+
+	GameFinder.Name = "GameFinder"
+	GameFinder.Parent = game.CoreGui
+	GameFinder.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	GameFound.Name = "GameFound"
+	GameFound.Parent = GameFinder
+	GameFound.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+	GameFound.BorderSizePixel = 0
+	GameFound.ClipsDescendants = true
+	GameFound.Position = UDim2.new(0.412977785, 0, 0.379551917, 0)
+	GameFound.Size = UDim2.new(0, 305, 0, 112)
+	GameFound.ZIndex = 1000
+
+	Logo.Name = "Logo"
+	Logo.Parent = GameFound
+	Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Logo.BackgroundTransparency = 1.000
+	Logo.BorderSizePixel = 0
+	Logo.Position = UDim2.new(-0.00344010885, 0, -0.0149654383, 0)
+	Logo.Size = UDim2.new(0, 50, 0, 50)
+	Logo.ZIndex = 22
+	Logo.Image = "rbxassetid://7893130056"
+
+	Pattern.Name = "Pattern"
+	Pattern.Parent = GameFound
+	Pattern.BackgroundColor3 = Color3.fromRGB(138, 0, 0)
+	Pattern.BorderSizePixel = 0
+	Pattern.Position = UDim2.new(0, 0, -0.0114916395, 0)
+	Pattern.Size = UDim2.new(0, 305, 0, 48)
+	Pattern.ZIndex = 21
+	Pattern.Image = "rbxassetid://121480522"
+	Pattern.ImageTransparency = 0.700
+	Pattern.ScaleType = Enum.ScaleType.Tile
+	Pattern.SliceCenter = Rect.new(0, 256, 0, 256)
+	Pattern.TileSize = UDim2.new(0, 45, 0, 45)
+
+	Title.Name = "Title"
+	Title.Parent = Pattern
+	Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Title.BackgroundTransparency = 1.000
+	Title.Position = UDim2.new(0.172638446, 0, -0.0208333321, 0)
+	Title.Size = UDim2.new(0, 200, 0, 47)
+	Title.ZIndex = 21
+	Title.Font = Enum.Font.SourceSans
+	Title.Text = title
+	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Title.TextSize = 40.000
+	Title.TextStrokeTransparency = 0.730
+	Title.TextWrapped = true
+
+	text.Name = "text"
+	text.Parent = GameFound
+	text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	text.BackgroundTransparency = 1.000
+	text.Position = UDim2.new(0.036065571, 0, 0.490199476, 0)
+	text.Size = UDim2.new(0, 282, 0, 53)
+	text.ZIndex = 21
+	text.Font = Enum.Font.SourceSans
+	text.Text = txt
+	text.TextColor3 = Color3.fromRGB(255, 255, 255)
+	text.TextSize = 20.000
+
+	CloseAnim.Name = "CloseAnim"
+	CloseAnim.Parent = GameFound
+	CloseAnim.BackgroundColor3 = Color3.fromRGB(138, 0, 0)
+	CloseAnim.BorderSizePixel = 0
+	CloseAnim.Position = UDim2.new(-0.000114768744, 0, -0.00392857194, 0)
+	CloseAnim.Size = UDim2.new(0, 305, 0, 112)
+	CloseAnim.Visible = false
+	CloseAnim.ZIndex = 30
+	CloseAnim.Image = "rbxassetid://121480522"
+	CloseAnim.ImageTransparency = 0.700
+	CloseAnim.ScaleType = Enum.ScaleType.Tile
+	CloseAnim.SliceCenter = Rect.new(0, 256, 0, 256)
+	CloseAnim.TileSize = UDim2.new(0, 45, 0, 45)
+
+	Logo_2.Name = "Logo"
+	Logo_2.Parent = CloseAnim
+	Logo_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Logo_2.BackgroundTransparency = 1.000
+	Logo_2.Position = UDim2.new(0.32234928, 0, 0.0091754375, 0)
+	Logo_2.Size = UDim2.new(0, 108, 0, 108)
+	Logo_2.ZIndex = 31
+	Logo_2.Image = "rbxassetid://7893130056"
+
+	-- Scripts:
+
+	local function MOLICW_fake_script() -- GameFinder.GameLoadScript 
+		local script = Instance.new('LocalScript', GameFinder)
+
+
+
+
+		GameLoad = script.Parent.GameFound
+
+		GameLoad.Visible = false
+		GameLoad.Draggable = false
+		GameLoad.Position = UDim2.new(0.5, 0,0.5, 0)
+		GameLoad.AnchorPoint = Vector2.new(0.5,0.5)
+		GameLoad.Size = UDim2.new(0,0,0,0)
+
+		closegame = GameLoad.CloseAnim
+
+		closegame.Logo.ImageTransparency = 0
+
+
+		closegame.Position = UDim2.new(0.5, 0,0.5, 0)
+		closegame.AnchorPoint = Vector2.new(0.5,0.5)
+		closegame.Visible = true
+
+		-------------------
+		wait(3)
+		GameLoad.Visible = true
+		wait(0.1)
+		GameLoad:TweenSize(UDim2.new(0,305,0, 112),"InOut","Sine",0.5,true)
+		wait(0.7)
+
+		closegame.Active = false
+
+		for i = 0,1,0.05 do
+			closegame.BackgroundTransparency = i
+			closegame.ImageTransparency = i
+			wait(0.01)
+		end
+		closegame.BackgroundTransparency = 1
+		closegame.ImageTransparency = 1
+
+		for i = 0,1,0.1 do
+			closegame.Logo.ImageTransparency = i
+			wait(0.01)
+		end
+
+		closegame.Visible = false
+		wait(secs)--wait before it closes
+		closegame.Visible = true
+		--
+		closegame.Active = false
+
+		for i = 1,0,-0.05 do
+			closegame.BackgroundTransparency = i
+			closegame.ImageTransparency = i
+			wait(0.01)
+		end
+		for i = 1,0,-0.1 do
+			closegame.Logo.ImageTransparency = i
+			wait(0.01)
+		end
+		closegame.BackgroundTransparency = 0
+		closegame.ImageTransparency = 0
+		wait(0.5)
+		GameLoad:TweenSize(UDim2.new(0,0,0,0),"InOut","Sine",0.5,true)
+		wait(0.7)
+		GameLoad.Visible = false
+	end
+	coroutine.wrap(MOLICW_fake_script)()
+end
