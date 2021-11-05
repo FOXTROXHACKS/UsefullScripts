@@ -1,4 +1,4 @@
---loadstring(game:HttpGet("https://raw.githubusercontent.com/FOXTROXHACKS/UsefullScripts/main/ElToro-notifSystem"))()
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/FOXTROXHACKS/UsefullScripts/main/ElToro-ElToro-notifs"))()
 --Send notification: notify(title, text, secs)
 --Send message: Message(title, text, secs)
 local notif = Instance.new("ScreenGui")
