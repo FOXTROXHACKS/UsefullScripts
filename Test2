@@ -25,7 +25,7 @@ UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Bottom
 UIListLayout.Padding = UDim.new(0.0199999996, 0)
 
 
-local function notify(title, txt, secs)
+function notify(title, txt, secs)
 
 
 	local NotifFrame = Instance.new("Frame")
@@ -185,7 +185,7 @@ local function notify(title, txt, secs)
 	coroutine.wrap(AKGT_fake_script)()
 end
 
-local function Message(title, txt, secs)
+function Message(title, txt, secs)
 
 	local GameFinder = Instance.new("ScreenGui")
 	local GameFound = Instance.new("Frame")
@@ -354,5 +354,3 @@ local function Message(title, txt, secs)
 	end
 	coroutine.wrap(MOLICW_fake_script)()
 end
-return notify()
-return Message()
