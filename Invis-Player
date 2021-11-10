@@ -15,6 +15,8 @@ local Trans = 1 --transparency Level
 local NC = false --Noclip
 ]]--
 ----------------------------------------
+--How to use?
+--Invisible() --first execution = invisible, second execution = visible
 
 _gTjNgvm70DE3BH7E, Protected_by_MoonSecV2, Discord = 'discord.gg/gQEH2uZxUk'
 
