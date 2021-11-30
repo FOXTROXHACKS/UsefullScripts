@@ -1,4 +1,4 @@
---local notify = loadstring(game:HttpGet("https://raw.githubusercontent.com/FOXTROXHACKS/UsefullScripts/main/TypeWriter"))()
+--local notify = loadstring(game:HttpGet("https://raw.githubusercontent.com/FOXTROXHACKS/UsefullScripts/main/TypeWritter"))()
 -- RGB COLOR PICKER: https://g.co/kgs/F75dmA
 --Send notification: notify("TEXT HERE", 2)
 --Send notif with color: notify("WHITE TEXT" .. "<font color=\"rgb(0, 255, 68)\">COLORED TEXT</font>\n<font size=\"15\">WHITE TEXT</font>",2.5)
