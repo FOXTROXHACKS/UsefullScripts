@@ -24,7 +24,7 @@ end
 
 if hwid then
 setclipboard(hwid)
-game:GetService("Players").LocalPlayer:Kick('copied hwid to clipboard')
+game:GetService("Players").LocalPlayer:Kick('HWID has been to clipboard')
 else
-game:GetService("Players").LocalPlayer:Kick('unable to find hwid')
+game:GetService("Players").LocalPlayer:Kick('Unable to find HWID')
 end
