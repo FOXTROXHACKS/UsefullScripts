@@ -1,4 +1,21 @@
-<?php
-    $HWID = getallheaders()["Syn-Fingerprint"];
-    echo $HWID;
-?>
+{
+  "args": {}, 
+  "headers": {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9", 
+    "Accept-Encoding": "gzip, deflate, br", 
+    "Accept-Language": "en,es-US;q=0.9,es-419;q=0.8,es;q=0.7", 
+    "Host": "httpbin.org", 
+    "Sec-Ch-Ua": "\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"97\", \"Chromium\";v=\"97\"", 
+    "Sec-Ch-Ua-Mobile": "?0", 
+    "Sec-Ch-Ua-Platform": "\"Windows\"", 
+    "Sec-Fetch-Dest": "document", 
+    "Sec-Fetch-Mode": "navigate", 
+    "Sec-Fetch-Site": "none", 
+    "Sec-Fetch-User": "?1", 
+    "Upgrade-Insecure-Requests": "1", 
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36", 
+    "X-Amzn-Trace-Id": "Root=1-61dee789-5c8e16c71cf1cc024f40cf24"
+  }, 
+  "origin": "181.115.61.21", 
+  "url": "https://httpbin.org/get"
+}
