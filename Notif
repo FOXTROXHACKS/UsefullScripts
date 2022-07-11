@@ -1,3 +1,9 @@
+--[[ HOW TO USE
+notify = loadstring(game:HttpGet("https://raw.githubusercontent.com/FOXTROXHACKS/UsefullScripts/main/Notif"))() --to load the script
+notify("TEXT", 2, 0) --normal notif
+notify("WHITE TEXT" .. "<font color=\"rgb(0, 255, 68)\">COLORED TEXT</font>\n<font size=\"15\">WHITE TEXT</font>",2.5, 0) --colored text (change 0 to change typing speed)
+]]
+
 local InsertService = game:GetService("InsertService")
 local HttpService = game:GetService("HttpService")
 local CoreGui = game:GetService("CoreGui")
