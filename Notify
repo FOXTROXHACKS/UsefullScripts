@@ -1,34 +1,38 @@
- function notify(Text,Delay,DelayBetweenChars)
-    coroutine.wrap(function()
-        local CoreGui = game:GetService("CoreGui")
-        local Folder = game:GetObjects("rbxassetid://7231968281")[1]
-        local Screen = CoreGui:FindFirstChild("TypeWriter")
+local InsertService = game:GetService("InsertService")
+local HttpService = game:GetService("HttpService")
+local CoreGui = game:GetService("CoreGui")
 
-        if not Screen then
-            Screen = Folder.TypeWriter:Clone()
-            Screen.Parent = CoreGui
-        end
+if not TW then
+	getgenv().TW = {}
+	TW.MainModule = InsertService:LoadLocalAsset("rbxassetid://7231968281")
+	TW.Screen = TW.MainModule.Screen:Clone()
+	TW.Screen.Name = "TW " .. HttpService:GenerateGUID(false)
+	TW.Screen.Parent = CoreGui
+end
 
-        local Message = Folder.Message:Clone()
-        Message.Parent = Screen.Container
-        Message.Text = Text
-        Message.Size = UDim2.new(1,0,0,Message.TextBounds.Y)
+return function(Text,Duration,Duration2)
+	local Message = TW.MainModule.Message:Clone()
+	Message.Parent = TW.Screen
+	Message.Text = Text
+	Message.Size = UDim2.new(1,0,0,Message.TextBounds.Y)
 
-        local Index = 0
-        local DisplayText = Text
-        DisplayText = DisplayText:gsub("<br%s*/>", "\n")
-        DisplayText = DisplayText:gsub("<[^<>]->", "")
+	local Index = 0
+	local DisplayText = Text
+	DisplayText = DisplayText:gsub("<br%s*/>", "\n")
+	DisplayText = DisplayText:gsub("<[^<>]->", "")
 
-        for _ in utf8.graphemes(DisplayText) do
-            Index = Index + 1
-            Message.MaxVisibleGraphemes = Index
-            task.wait(DelayBetweenChars)
-        end
-        task.wait(Delay)
-        for _ in utf8.graphemes(DisplayText) do
-            Index = Index - 1
-            Message.MaxVisibleGraphemes = Index
-            task.wait(DelayBetweenChars)
-        end
-        Message:Destroy()
-    end)()
+	coroutine.wrap(function()
+		for _ in utf8.graphemes(DisplayText) do
+			Index = Index + 1
+			Message.MaxVisibleGraphemes = Index
+			task.wait(Duration2)
+		end
+		task.wait(Duration)
+		for _ in utf8.graphemes(DisplayText) do
+			Index = Index - 1
+			Message.MaxVisibleGraphemes = Index
+			task.wait(Duration2)
+		end
+		Message:Destroy()
+	end)()
+end
