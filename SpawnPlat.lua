@@ -15,7 +15,7 @@ function SpawnPlatform(POS)
 	Platform.Archivable = true
 	Platform.CanTouch = true
 
-	Decal.Texture = "rbxassetid://11816966938"
+	Decal.Texture = "rbxassetid://11816966906"
 	Decal.Face = "Top"
 	Decal.Parent = Platform
 	Decal.Archivable = true
